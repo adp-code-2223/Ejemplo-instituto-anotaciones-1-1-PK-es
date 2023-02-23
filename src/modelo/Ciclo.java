@@ -1,5 +1,5 @@
 package modelo;
-// Generated 23 feb 2023 11:16:20 by Hibernate Tools 4.3.6.Final
+// Generated 23 feb 2023 16:16:27 by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,10 +15,6 @@ import javax.persistence.Table;
 @Table(name = "cicloformativo", catalog = "instituto")
 public class Ciclo implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -968218944706376944L;
 	private Integer idCiclo;
 	private String nombre;
 	private Integer horas;

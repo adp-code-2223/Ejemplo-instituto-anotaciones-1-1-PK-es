@@ -1,15 +1,16 @@
 package modelo;
-// Generated 23 feb 2023 11:16:20 by Hibernate Tools 4.3.6.Final
-
-import static javax.persistence.GenerationType.IDENTITY;
+// Generated 23 feb 2023 16:16:27 by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -20,10 +21,6 @@ import javax.persistence.Table;
 @Table(name = "modulo", catalog = "instituto")
 public class Modulo implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8568593237402343894L;
 	private Integer idModulo;
 	private String nombre;
 	private Set<Profesor> profesors = new HashSet<Profesor>(0);
@@ -61,7 +58,10 @@ public class Modulo implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	@ManyToMany(mappedBy = "modulos")
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "profesormodulo", catalog = "instituto", joinColumns = {
+			@JoinColumn(name = "idModulo", nullable = false, updatable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "idProfesor", nullable = false, updatable = false) })
 	public Set<Profesor> getProfesors() {
 		return this.profesors;
 	}
@@ -69,20 +69,5 @@ public class Modulo implements java.io.Serializable {
 	public void setProfesors(Set<Profesor> profesors) {
 		this.profesors = profesors;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

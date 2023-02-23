@@ -1,5 +1,5 @@
 package modelo;
-// Generated 23 feb 2023 11:16:20 by Hibernate Tools 4.3.6.Final
+// Generated 23 feb 2023 16:16:27 by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,10 +17,6 @@ import javax.persistence.Table;
 @Table(name = "comunidadAutonoma", catalog = "instituto")
 public class ComunidadAutonoma implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private int idCa;
 	private String nombre;
 	private Set<Provincia> provincias = new HashSet<Provincia>(0);
@@ -67,10 +63,5 @@ public class ComunidadAutonoma implements java.io.Serializable {
 	public void setProvincias(Set<Provincia> provincias) {
 		this.provincias = provincias;
 	}
-	
-	
-	
-	
-	
 
 }

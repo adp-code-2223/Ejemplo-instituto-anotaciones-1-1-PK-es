@@ -10,12 +10,12 @@
         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=instituto;encrypt=true;trustServerCertificate=true;</property>
         <property name="hibernate.connection.username">user</property>
         <property name="hibernate.default_schema">dbo</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2016Dialect</property>
-        <property name="hibernate.hbm2ddl.auto">none</property>
+          <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2016Dialect</property>
+      <property name="hibernate.hbm2ddl.auto">none</property>
         <property name="hibernate.search.autoregister_listeners">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
         <mapping class="modelo.Direccion" />
-        <mapping class="modelo.Profesor" />  
+        <mapping class="modelo.Profesor" />
         <mapping class="modelo.ComunidadAutonoma" />
         <mapping class="modelo.Provincia" />
         <mapping class="modelo.ContactInfo" />
